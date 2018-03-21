@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>crashcourse</title>
+</head>
+
+<body>
+	<p id="demo">Banan</p>
+	
+	<script>
+		// scope: global, local
+		// 2 global variables, type string (options: integer, float, boolear)
+		// select: Document > #demo > Result
+		var output = document.getElementById("demo");
+		
+		var str1 = "Hello"; // ' "
+		var str2 = "World"; 
+		
+		var result = str1 + " " + str2 + "!"; // concatenation
+		
+		
+		
+		var x = prompt("Indtast et tal:", "");
+		var y = prompt("Indtast et tal:", "");
+		
+		// paranteser i en function bruges til mulige "argumenter"
+		function multiply(){
+			// do something....
+			// kaldes en lokal variable
+			// let indikerer en lokal variable, som kun er gyldig i dens umiddelbare kode sammenhæng
+			
+			if(isNaN(x) || isNaN(y)){
+				// do something if condition is true
+			   	alert("Det var ikke et nummer!");
+			}else{
+			   	// or do this
+				let result = x * y;
+				
+				// funktionen giver en værdi tilbage, kaldet return
+				return result;
+			}
+			
+			// console.log(result1);
+		
+		}
+		
+		// function call
+		console.log(multiply());
+		// console.log(result);
+		
+		
+		// output.innerHTML = result + " Calculation result is: " + result1;
+		output.innerHTML = result;
+		// += tilføjer (kæder) værdierne
+		output.innerHTML += " Calculation result is: ";
+		output.innerHTML += multiply();
+	
+	</script>
+	
+	
+</body>
+</html>
