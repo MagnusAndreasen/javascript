@@ -12,6 +12,23 @@
 		['How many moons does Venus have?', 0]	
 	];
 	
+	console.log(questions);
+	console.log("First question:" + questions[0][0]);
+	console.log("First answer:" + questions[0][1]);
+	
+	function askQuestion(){
+		var answer = prompt(questions[0][0], "");
+		
+		if (answer == questions[0][1]){
+			alert("Correct!");
+		} else {
+			alert("Not correct! - The correct answer was " + questions[0][1] + ".");
+		}
+		
+	}
+	
+	askQuestion();
+	
 </script>
 </head>
 
