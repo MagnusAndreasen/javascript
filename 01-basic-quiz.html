@@ -9,15 +9,37 @@
 <h2>Mini Quiz with JavaScript!</h2>
 <p id="question"></p>
 
-<form id="myForm" method="post">
+<form id="myForm" method="post" onSubmit="return validateAnswer()">
 	<p><input type="text" id="input" placeholder="Type your answer..." autofocus></p>
 	<button type="submit" id="submit">Submit your answer!</button>
 </form>
 
-<script type="text/javascript">
+<script>
+	// 2 globale variabler (konstanter)
+	const question = "Who is the 45th president of the United States of America?";
+	const solution = "donald trump";
 	
-	var question = 'Who is the 45th president of the United States of America?'
-	var solution = 'donald trump';
+	var questionText = document.getElementById("question");
+	var myForm = document.getElementById("myForm");
+	// console.log(questionText);
+	questionText.innerHTML = question;
+	
+	function validateAnswer(){
+		// console.log("Besvaret!");
+		let answer = myForm.input.value;
+		console.log(answer);
+		
+		if(answer.toLowerCase() == solution){
+		   	// do something
+			questionText.innerHTML = "Correct!";
+		} else {
+			// do something else
+			questionText.innerHTML = "I'd like that - but it's not true";
+		}
+		// forhindre at formen bliver sendt
+		return false;
+	}
+	
 	
 </script>
 </body>
